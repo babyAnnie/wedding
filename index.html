@@ -5,7 +5,37 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/love.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-  <title>Vite + React + TS</title>
+  <title>❤ WEDDING ❤</title>
+  <script src="http://res.wx.qq.com/open/js/jweixin-1.5.0.js"></script>
+  <script>
+    try {
+      wx.config({
+        debug: false,
+        appId: 'wx5df7ecedbb56190f',
+        timestamp: "1690771822",
+        nonceStr: "b59630597c114e029fc17485522d94bf",
+        signature: '0A16E22CBFC536EAE9528B5624E5A03DF6CE35A0',
+        jsApiList: [
+          'onMenuShareTimeline',
+          'onMenuShareAppMessage',
+          'updateAppMessageShareData',
+          'updateTimelineShareData',
+          'getLocation',
+          'openLocation'
+        ]
+      });
+      wx.ready(function () {
+        var shareData64 = {
+          title: '我们结婚啦',
+          desc: '欢迎来喝我们的喜酒呀~',
+          link: 'http://www.ccmfcm.com/v/ACB1622D-9AA6-46AF-B9D6-48D93F23DB37',
+          imgUrl: 'http://www.ccmfcm.com/icons/f744b8f9040f45abad7238a8027da110.jpg'
+        };
+        wx.updateAppMessageShareData(shareData64);
+        wx.updateTimelineShareData(shareData64);
+      });
+    } catch { }
+  </script>
   <script type="text/javascript">
     try {
       window._AMapSecurityConfig = {

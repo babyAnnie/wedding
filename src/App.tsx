@@ -7,7 +7,7 @@ import Vindicate from './pages/Vindicate';
 import Map from './pages/Map';
 import User from './pages/User';
 import Love from './pages/Love';
-import music from './assets/music.mp3'
+import music from '../public/music.mp3'
 
 // https://animate.style/
 // https://reactcommunity.org/react-transition-group/css-transition
@@ -23,6 +23,28 @@ const pages: any[] = [
 function App() {
   const [tabInd, setTabInd] = useState<number>(0);
   const [isMusicPlay, setIsMusicPlay] = useState(true);
+  const [startX, setStartX] = useState(0);
+  const [startY, setStartY] = useState(0);
+  const [isup, setIsUp] = useState<boolean | undefined>(undefined);
+
+  useEffect(() => {
+    if (typeof isup === 'undefined') return;
+    if (isup) {
+      if (tabInd > 0) {
+        setTabInd(tabInd - 1);
+      } else {
+        setTabInd(pages?.length - 1);
+      }
+    } else {
+      if (tabInd < pages?.length - 1) {
+        setTabInd(tabInd + 1);
+      } else {
+        setTabInd(0);
+      }
+    }
+    setIsUp(undefined);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isup])
 
   useEffect(() => {
     setIsMusicPlay(true)
@@ -48,43 +70,30 @@ function App() {
     </div>
   }
 
-
-  // document.getElementById("id").addEventListener("touchstart", function (e) {
-  //   e.preventDefault();
-  //   startX = e.originalEvent.changedTouches[0].pageX,
-  //     startY = e.originalEvent.changedTouches[0].pageY;
-  // });
-  // document.getElementById("id").addEventListener("touchmove", function (e) {
-  //   e.preventDefault();
-  //   moveEndX = e.originalEvent.changedTouches[0].pageX,
-  //     moveEndY = e.originalEvent.changedTouches[0].pageY,
-  //     X = moveEndX - startX,
-  //     Y = moveEndY - startY;
-
-  //   if (Math.abs(X) > Math.abs(Y) && X > 0) {
-  //     alert("左往右滑");
-  //   }
-  //   else if (Math.abs(X) > Math.abs(Y) && X < 0) {
-  //     alert("右往左滑");
-  //   }
-  //   else if (Math.abs(Y) > Math.abs(X) && Y > 0) {
-  //     alert("上往下滑");
-  //   }
-  //   else if (Math.abs(Y) > Math.abs(X) && Y < 0) {
-  //     alert("下往上滑");
-  //   }
-  //   else {
-  //     alert("滑了个寂寞");
-  //   }
-  // });
-
-
-
-
   return (
     <div className='app-wrapper'
+      onTouchStart={(e) => {
+        const tempStartX = e.targetTouches[0].pageX;
+        setStartX(tempStartX);
+        const tempStartY = e.targetTouches[0].pageY;
+        setStartY(tempStartY);
+      }}
+      onTouchMove={(e) => {
+        const moveEndX = e.targetTouches[0].pageX;
+        const moveEndY = e.targetTouches[0].pageY;
+        const X = moveEndX - startX;
+        const Y = moveEndY - startY;
+        if (Math.abs(Y) > Math.abs(X) && Y > 0) {
+          setIsUp(true);
+        }
+        else if (Math.abs(Y) > Math.abs(X) && Y < 0) {
+          setIsUp(false);
+        }
+        else {
+          setIsUp(undefined);
+        }
+      }}
       onDoubleClick={() => {
-        // console.log('e', e, e?.clientY);
         if (tabInd < pages?.length - 1) {
           setTabInd(tabInd + 1);
         } else {
