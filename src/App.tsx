@@ -1,4 +1,4 @@
-import musicLogo from './assets/music.png'
+import musicLogo from '../public/assets/music.png'
 import './App.css';
 import { useEffect, useState } from 'react';
 import Home from './pages/Home';

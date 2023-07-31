@@ -1,7 +1,7 @@
 import { Button, Form, Input, message } from 'antd';
 import '../pages.css'
-import ledImg from '../assets/led.png'
-import phonePng from '../assets/phone.png'
+import ledImg from '../../public/assets/led.png'
+import phonePng from '../../public/assets/phone.png'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const onFinishFailed = (errorInfo: any) => {
@@ -92,13 +92,13 @@ function User() {
       </div>
       <div className='calls'>
         <div className='center' style={{ flex: 1, }}>
-          <a className='center linkCall' style={{ width: 'auto', padding: 8, }}>
+          <a href='tel:19102030824' className='center linkCall' style={{ width: 'auto', padding: 8, }}>
             <img className='animate__animated animate__swing' style={{ width: 18, height: 18 }} src={phonePng} alt="" />
             <span className='animate__animated animate__fadeIn'>&nbsp;联系新郎</span>
           </a>
         </div>
         <div className='center' style={{ flex: 1, }}>
-          <a className='center linkCall' style={{ width: 'auto', padding: 8, }}>
+          <a href='tel:17728166976' className='center linkCall' style={{ width: 'auto', padding: 8, }}>
             <img className='animate__animated animate__swing' style={{ width: 18, height: 18 }} src={phonePng} alt="" />
             <span className='animate__animated animate__fadeIn'>&nbsp;联系新娘</span>
           </a>

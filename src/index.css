@@ -84,17 +84,17 @@ div {
 
 @font-face {
   font-family: d1;
-  src: url("./font/1.ttf");
+  src: url("../public/font/1.ttf");
 }
 
 @font-face {
   font-family: d2;
-  src: url("./font/2.ttf");
+  src: url("../public/font/2.ttf");
 }
 
 @font-face {
   font-family: d3;
-  src: url("./font/3.ttf");
+  src: url("../public/font/3.ttf");
 }
 
 .user label {

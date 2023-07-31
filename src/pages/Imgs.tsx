@@ -1,8 +1,8 @@
 import '../pages.css'
-import ledImg from '../assets/led.png'
-import w4Png from '../assets/w4.png'
-import w5Png from '../assets/w5.png'
-import w6Png from '../assets/w6.png'
+import ledImg from '../../public/assets/led.png'
+import w4Png from '../../public/assets/w4.png'
+import w5Png from '../../public/assets/w5.png'
+import w6Png from '../../public/assets/w6.png'
 
 function Imgs() {
   return (

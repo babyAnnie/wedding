@@ -1,5 +1,5 @@
 import MapContainer from './MapContainer';
-import ledImg from '../assets/led.png'
+import ledImg from '../../public/assets/led.png'
 const invitationStrList = [
   `沉浸在幸福日子中的我们将于`,
   `2023年08月20日`,
