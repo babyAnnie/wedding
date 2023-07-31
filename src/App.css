@@ -1,0 +1,66 @@
+.app-wrapper {
+  background-color: #a10505;
+  background-image: url("./assets/bg.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.music-wrapper {
+  position: absolute;
+  right: 1vh;
+  top: 1vh;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  cursor: pointer;
+}
+
+.app-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.logo {
+  width: 32px;
+  height: 32px;
+  will-change: filter;
+  transition: -webkit-filter 300ms;
+  transition: filter 300ms;
+  transition: filter 300ms, -webkit-filter 300ms;
+}
+.logo:hover {
+  -webkit-filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+@-webkit-keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .logo {
+    -webkit-animation: logo-spin infinite 20s linear;
+    animation: logo-spin infinite 20s linear;
+  }
+}
