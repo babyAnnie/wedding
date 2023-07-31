@@ -1,7 +1,7 @@
-import topBg from '../../public/assets/topBg.png'
-import titleBg from '../../public/assets/titleBg.png';
+import topBg from '../assets/imgs/topBg.png'
+import titleBg from '../assets/imgs/titleBg.png';
 import '../pages.css';
-import heartPng from '../../public/assets/heart.png'
+import heartPng from '../assets/imgs/heart.png'
 
 function Home() {
   return (

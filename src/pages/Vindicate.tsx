@@ -1,7 +1,7 @@
 import '../pages.css'
-import bottomBg from '../../public/assets/bottomBg.png'
-import ledImg from '../../public/assets/led.png'
-import q1 from '../../public/assets/w1.png'
+import bottomBg from '../assets/imgs/bottomBg.png'
+import ledImg from '../assets/imgs/led.png'
+import q1 from '../assets/imgs/w1.png'
 
 const invitationStrList = [
   `红烛月好，灯影憧憧。`,

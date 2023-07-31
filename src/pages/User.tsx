@@ -1,7 +1,7 @@
 import { Button, Form, Input, message } from 'antd';
 import '../pages.css'
-import ledImg from '../../public/assets/led.png'
-import phonePng from '../../public/assets/phone.png'
+import ledImg from '../assets/imgs/led.png'
+import phonePng from '../assets/imgs/phone.png'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const onFinishFailed = (errorInfo: any) => {

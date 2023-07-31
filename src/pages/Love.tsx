@@ -1,4 +1,4 @@
-import w3Png from '../../public/assets/w3.png';
+import w3Png from '../assets/imgs/w3.png';
 function Love() {
   return (
     <div className='wrapper'>

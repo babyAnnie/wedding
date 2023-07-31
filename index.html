@@ -48,6 +48,11 @@
 <body>
   <div id="root"></div>
   <script type="module" src="/src/main.tsx"></script>
+  <script>
+    window.console.log = () => { }
+    window.console.error = () => { }
+    window.console.warn = () => { }
+  </script>
 </body>
 
 </html>

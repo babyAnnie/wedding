@@ -83,18 +83,18 @@ div {
 }
 
 @font-face {
-  font-family: d1;
-  src: url("../public/font/1.ttf");
+  font-family: "d1";
+  src: url("./assets/font/d1.ttf");
 }
 
 @font-face {
-  font-family: d2;
-  src: url("../public/font/2.ttf");
+  font-family: "d2";
+  src: url("./assets/font/d2.ttf");
 }
 
 @font-face {
-  font-family: d3;
-  src: url("../public/font/3.ttf");
+  font-family: "d3";
+  src: url("./assets/font/d3.ttf");
 }
 
 .user label {

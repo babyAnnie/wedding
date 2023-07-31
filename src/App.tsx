@@ -1,4 +1,4 @@
-import musicLogo from '../public/assets/music.png'
+import musicLogo from './assets/imgs/music.png'
 import './App.css';
 import { useEffect, useState } from 'react';
 import Home from './pages/Home';
@@ -7,7 +7,7 @@ import Vindicate from './pages/Vindicate';
 import Map from './pages/Map';
 import User from './pages/User';
 import Love from './pages/Love';
-import music from '../public/music.mp3'
+import music from './assets/music/music.mp3'
 
 // https://animate.style/
 // https://reactcommunity.org/react-transition-group/css-transition
@@ -47,7 +47,15 @@ function App() {
   }, [isup])
 
   useEffect(() => {
-    setIsMusicPlay(true)
+    const bgMusic: any = document.getElementById('bgMusic');
+    if (!bgMusic) return
+    const playMusic = () => {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
+      bgMusic?.play();
+    }
+    document.body.addEventListener('click', playMusic);
+    document.body.addEventListener('mousemove', playMusic);
+    document.body.addEventListener('touchmove', playMusic);
   }, [])
 
   useEffect(() => {
@@ -102,7 +110,7 @@ function App() {
       }}>
       <audio id='bgMusic' controls={false} autoPlay={true} loop={true}>
         <source src={music} type="audio/mpeg" />
-        <p>你的浏览器不支持 HTML5 音频，可点击<a href="viper.mp3">此链接</a>收听。</p>
+        <p>你的浏览器不支持 HTML5 音频，可点击<a href="http://www.ccmfcm.com/uploads/mp3lib/2019-05-27/Ali_d0f96b821cc44042873060fced0a4f96.mp3">此链接</a>收听。</p>
       </audio>
       {createTab()}
       <div className='music-wrapper' onClick={() => { setIsMusicPlay(!isMusicPlay) }}>
